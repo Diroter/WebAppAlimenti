@@ -1,0 +1,34 @@
+CREATE DATABASE WA_ALIMENTI;
+CREATE TABLE Inventario(
+    ID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    NomeProdotto VARCHAR(64) NOT NULL,
+    Tipo VARCHAR(64) NOT NULL,
+    DataScadenza DATE,
+    Quantità INT(20)
+);
+CREATE TABLE Utente(
+    ID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    Administrator BOOLEAN,
+    Donatore BOOLEAN,
+    Utente BOOLEAN   
+);
+CREATE TABLE Anagrafica(
+    CF VARCHAR(11) PRIMARY KEY,
+    Nome VARCHAR(64) NOT NULL,
+    Cognome VARCHAR(64) NOT NULL,
+    Email VARCHAR(64) NOT NULL,
+    Citta VARCHAR(64) NOT NULL,
+    provincia  VARCHAR(64) NOT NULL,
+    via  VARCHAR(64) NOT NULL,
+    civico  VARCHAR(64) NOT NULL,
+    cap  VARCHAR(64) NOT NULL,
+    username  VARCHAR(64) NOT NULL,
+    passw  PASSWORD(64) NOT NULL,
+    ID INT (10) NOT NULL,
+    FOREIGN KEY (ID) REFERENCES Utente(ID)
+);
+CREATE TABLE Comuni(
+    Comune VARCHAR(64) NOT NULL,
+    Cap INT(20) PRIMARY KEY
+);
+
